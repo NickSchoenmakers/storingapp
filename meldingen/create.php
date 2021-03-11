@@ -21,7 +21,12 @@
             </div>
             <div class="form-group">
                 <label for="type">Type</label>
-                <!-- hier komt een dropdown -->
+                <select name="group" id="group">
+                    <option value="">wat voor soort atractie is het </option>
+                    <option value="water">waterglijbaan</option>
+                    <option value="achtbaan">achtbaan</option>
+                    <option value="botsauto">botsauto</option>
+                    <option value="schommel">schommel</option>
             </div>
             <div class="form-group">
                 <label for="capaciteit">Capaciteit p/uur:</label>

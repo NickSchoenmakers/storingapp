@@ -26,3 +26,5 @@ $statement->execute([
     ":capaciteit" => $capaciteit,
     ":melder" => $melder
 ]);
+
+header("Location: ../meldingen/index.php?msg=Melding opgeslagen");
