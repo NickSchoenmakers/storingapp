@@ -21,12 +21,21 @@
             </div>
             <div class="form-group">
                 <label for="type">Type</label>
-                <select name="group" id="group">
-                    <option value="">wat voor soort atractie is het </option>
-                    <option value="water">waterglijbaan</option>
-                    <option value="achtbaan">achtbaan</option>
-                    <option value="botsauto">botsauto</option>
-                    <option value="schommel">schommel</option>
+                <select name="type" id="type" class="form-input">
+                    <option value="">kies een type</option>
+                    <option value="A">achtbaan</option>
+                    <option value="B">draaiend</option>
+                    <option value="C">kinder</option>
+                    <option value="D">horeca</option>
+                    <option value="E">show</option>
+                    <option value="F">water</option>
+                    <option value="G">overig</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="priotiteit">priority:<label>
+                <input type="checkbox" name="priotiteit" id="priotiteit">
+                <label for="priotiteit">dit is een priotiteit attractie</label>
             </div>
             <div class="form-group">
                 <label for="capaciteit">Capaciteit p/uur:</label>
@@ -35,6 +44,10 @@
             <div class="form-group">
                 <label for="melder">Naam melder:</label>
                 <input type="text" name="melder" id="melder" class="form-input">
+            </div>
+            <div class="form-group">
+                <label for="overig">
+                <textarea name="overig" id="overig" class="form-input" rows="4"></textarea>
             </div>
             
             <input type="submit" value="Verstuur melding">
