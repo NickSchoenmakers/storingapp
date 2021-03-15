@@ -33,9 +33,9 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="priotiteit">priority:<label>
-                <input type="checkbox" name="priotiteit" id="priotiteit">
-                <label for="priotiteit">dit is een priotiteit attractie</label>
+                <label for="prioriteit">prioriteit:<label>
+                <input type="checkbox" name="prioriteit" id="prioriteit" class="form-input">
+                <label for="prioriteit">dit is een priotiteit attractie</label>
             </div>
             <div class="form-group">
                 <label for="capaciteit">Capaciteit p/uur:</label>
@@ -46,7 +46,7 @@
                 <input type="text" name="melder" id="melder" class="form-input">
             </div>
             <div class="form-group">
-                <label for="overig">
+                <label for="overig">overige info:</label>
                 <textarea name="overig" id="overig" class="form-input" rows="4"></textarea>
             </div>
             

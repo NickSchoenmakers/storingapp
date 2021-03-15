@@ -6,21 +6,46 @@ $capaciteit = $_POST['capaciteit'];
 $melder = $_POST['melder'];
 $type = $_POST['type'];
 $overig = $_POST['overig'];
-if(isset($_POST['priotiteit']))
+if(isset($_POST['prioriteit']))
 {
-    $priotiteit = true;
+    $prioriteit = true;
 }
 else
 {
-    $priotiteit = false;
+    $prioriteit = false;
 }
+//error benoemer
+$attractie = $_POST['attractie'];
+if(empty($attractie))
+{
+ $errors[] = "Vul de attractie-naam in.";
+}
+if(empty($type))
+{
+ $errors[] = "Vul een type in.";
+}
+if(empty($melder))
+{
+ $errors[] = "Vul de melder-naam in.";
+}
+$capaciteit = $_POST['capaciteit'];
+if(!is_numeric($capaciteit))
+{
+ $errors[] = "Vul voor capaciteit een geldig getal in.";
+}
+if(isset($errors))
+{
+ var_dump($errors);
+ die();
+}
+
 
 //1. Verbinding
 require_once 'conn.php';
 
 //2. Query
 
-$query = "INSERT INTO meldingen (attractie, type, capaciteit, melder, priotiteit, overig_info) VALUES (:attractie, :type, :capaciteit, :melder, :priotiteit, :overig)";
+$query = "INSERT INTO meldingen (attractie, type, capaciteit, melder, prioriteit, overige_info) VALUES (:attractie, :type, :capaciteit, :melder, :prioriteit, :overige_info)";
 
 
 //3. Prepare
@@ -34,8 +59,8 @@ $statement->execute([
     ":type" => $type,
     ":capaciteit" => $capaciteit,
     ":melder" => $melder,
-    ":priotiteit" => $priotiteit,
-    ":overig" => $overig
+    ":prioriteit" => $prioriteit,
+    ":overige_info" => $overig
 ]);
 
 $group = $_POST['group'];
