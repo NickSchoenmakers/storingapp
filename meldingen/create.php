@@ -50,7 +50,7 @@
                 <textarea name="overig" id="overig" class="form-input" rows="4"></textarea>
             </div>
             
-            <input type="submit" value="Verstuur melding">
+        <input type="submit" value="Verstuur melding">
 
         </form>
     </div>  
