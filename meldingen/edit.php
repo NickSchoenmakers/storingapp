@@ -2,19 +2,25 @@
 <html lang="nl">
 
 <head>
-    <title>StoringApp / Meldingen / Nieuw</title>
-    <?php require_once '../head.php'; ?>
 </head>
 
 <body>
+    <?php
+    
 
-    <?php require_once '../header.php'; ?>
+    
+    $id = $_GET['id'];
+    require_once '../backend/conn.php';
+    $query = "SELECT * FROM meldingen WHERE id = :id";
+    $statement = $conn->prepare($query);
+    $statement->execute([":id" => $id]);
+    $melding = $statement->fetch(PDO::FETCH_ASSOC);
 
-    <div class="container">
-        <h1>Nieuwe melding</h1>
+    ?>
 
-        <form action="../backend/meldingenController.php" method="POST">
-        
+
+    <form action="../backend/meldingenController.php" method="POST">
+            
             <div class="form-group">
                 <label for="attractie">Naam attractie:</label>
                 <input type="text" name="attractie" id="attractie" class="form-input">
@@ -50,12 +56,15 @@
                 <textarea name="overig" id="overig" class="form-input" rows="4"></textarea>
             </div>
             
-        <input type="hidden" name="action" value="create">
-        <input type="submit" value="Verstuur melding">
+            <form action="../backend/meldingenController.php" method="POST">
+        <input type="hidden" name="action" value="update">
+        <input type="hidden" name="id" value="<?php echo $id; ?>">
+        <input type="submit" value="wijzig">
 
-        </form>
-    </div>  
 
+
+   
+    
 </body>
 
 </html>

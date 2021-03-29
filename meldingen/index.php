@@ -35,6 +35,7 @@
             <th>Type</th> 
             <th>Melder</th> 
             <th>Overige info</th> 
+            <th>Aanpassen</th>
         </tr>
 
 
@@ -44,6 +45,7 @@
                 <td> <?php echo $melding['type'];?> </td>
                 <td> <?php echo $melding['melder'];?> </td>
                 <td> <?php echo $melding['overige_info'];?> </td>
+                <td><a href="edit.php">aanpassen</a></td>
             </tr>
         <?php endforeach; ?>
     </table>
