@@ -95,9 +95,5 @@ if($action == "update")
         ":id" => $id,
     ]);
 
-    $group = $_POST['group'];
-
-    echo $group;
-
     header("Location: ../meldingen/index.php?msg=Melding veranderd");
 }
