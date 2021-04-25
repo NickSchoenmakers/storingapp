@@ -20,7 +20,7 @@ if($statement->rowCount() < 1)
 {
  die("Error: account bestaat niet");
 }
-if(!password_verify($password, $username['password']))
+if(!password_verify($password, $users['password']))
 {
  die("Error: wachtwoord niet juist!");
 }
