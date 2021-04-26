@@ -1,6 +1,16 @@
 <!doctype html>
 <html lang="nl">
 
+
+<?php
+if(!isset($_SESSION['user_id']))
+{
+    $msg = "Je moet eerst inloggen";
+    header("location: login.php?msg=$msg");
+    exit;
+    
+}
+?>
 <head>
     <title>StoringApp</title>
     <?php require_once 'head.php'; ?>
@@ -33,7 +43,7 @@
                 <label for="password">password:</label>
                 <input type="password" name="password" id="password" class="form-input">
             </div>
-            <input type="submit" value="log in">   
+            <input type="submit" value="login">   
         </form>
     </div>    
 

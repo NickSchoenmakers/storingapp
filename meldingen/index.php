@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="nl">
 
+<?php
+if(!isset($_SESSION['user_id']))
+{
+    $msg = "Je moet eerst inloggen";
+    header("location: login.php?msg=$msg");
+    exit;
+    
+}
+?>
 <head>
     <title>StoringApp / Meldingen</title>
     <?php require_once '../head.php'; ?>
